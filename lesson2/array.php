@@ -1,6 +1,6 @@
 <?php
 
-$arrayLesson  = [1,1,1,1,[2,2,2],1,1,[2,2,[3,[4,4,4],3]],1];
+$arrayLesson  = [1,1,1,1,[2,2,2],1,1,[2,2,[3,[4,4,4],3]]];
 $symbol="";
 echo "<hr>";
 
@@ -12,7 +12,9 @@ function arrayPrint ($arrayLesson, $symbol = "") {
             arrayPrint($arrayLesson[$y], $symbol1);
             $i++;
         }
-        echo $symbol.$arrayLesson[$i]."<br>";
+        $d = $symbol.$arrayLesson[$i];
+        if (isset($arrayLesson[$i]))
+        echo $d."<br>";
     }
     $symbol=$symbol."-";
 }
