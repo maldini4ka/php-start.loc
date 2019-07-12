@@ -21,4 +21,32 @@ function arrayPrint ($arrayLesson, $symbol = "") {
 
 arrayPrint($arrayLesson);
 
+
 echo "<hr>";
+
+
+$array = [];
+$array[0][0] = 5;
+echo $array[1][1];
+for ($i = 0; $i < 5; $i++) {
+    for ($j = 0; $j < 5; $j++) {
+        if (($i + $j) < 4) {
+            $array[$i][$j] = 2;
+            // echo "$i,$j,$array[$i][$j] .<br>";
+        }
+        if (($i + $j) == 4) {
+            $array[$i][$j] = -1;
+        }
+        if (($i + $j) > 4) {
+            $array[$i][$j] = 0;
+        }
+    }
+
+}
+for ($i = 0; $i < 5; $i++) {
+    for ($j = 0; $j < 5; $j++) {
+        echo $array[$i][$j] . " ";
+    }
+    echo "<br>";
+
+}
