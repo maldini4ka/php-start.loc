@@ -68,4 +68,35 @@ print_r(glasnye($stringExample));
 echo '<pre>';
 
 //создать функцию, которая выводит позиции всех символов a в переданном тестке в обратном порядке
-
+$stringA ="caat baad breaad";
+function numbersA ($string) {
+    $lenght = strlen($string);
+    for ($i=$lenght; $i>=0; $i--){
+        if ((substr($string,$i-1,1))=='a')
+        echo $i." ";
+            }
+    }
+numbersA($stringA);
+echo '<br>';
+echo '<br>';
+//написать функцию, которая принимает массив и выводит его используя двойной цикл for и функцию count.
+// Функция должна выводить значения массива через пробел, а после вывода первой строки, должен быть переход на новую строчку
+$arrayExample = [
+    [1,1,1,1],
+    [2,2,2,2],
+    [3,3,3,3],
+    [4,4,4,4],
+    [5,5,5,5],
+    [6,6,6,6]];
+echo '<br>';
+function array6 ($array){
+$x = count($array[0]);
+$y = count($array);
+    for ($j=0; $j<$y; $j++){
+        for ($i=0; $i<$x; $i++){
+            echo $array[$j][$i].' ';
+        }
+        echo '<br>';
+    }
+}
+array6($arrayExample);
