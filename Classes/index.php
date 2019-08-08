@@ -1,74 +1,27 @@
 <?php
 
-class User
-{
+class Keyboard {
+
     public $name;
-    public $login;
-    public $password;
+    public $model;
+    public $key = [];
 
-    function __construct($name,$login, $password)
+    public function __construct($key1)
     {
-        $this->name = $name;
-        $this->login = $login;
-        $this->password = $password;
-
-    }
-
-    public function getInfo() {
-        $information =  "{$this->name}"."{$this->login}"."{$this->password}";
-        return $information;
-    }
-
-    public function Test() {
-        echo 'test';
+        $this->key = ['a' => $key1];
+        var_dump($this->key);
     }
 
 }
 
-
-$user1 = new User("Uladzimir", "maldini3", "123456");
-echo $user1->getInfo();
-
-class Moderator extends User {
-    public $info;
-    public $rights;
-
-    function Hello(){
-        echo "Moderator is here";
-    }
-
-    function __construct($name, $login, $password, $info, $rights)
+class key {
+    public $keys;
+    public function __construct($keys)
     {
-        parent::__construct($name, $login, $password);
-        $this->info = $info;
-        $this->rights = $rights;
+        $this->keys = $keys;
     }
 
-    public function getInfo() {
-        $information =  parent::getInfo();
-        $information .="{$this->info}"."{$this->rights}";
-        return $information;
-    }
 }
 
-$moder = new Moderator('Admin', 'Admin', '123', "moderator", "true");
-echo '<br>';
-echo '<br>'.$moder->Hello();
-echo $moder->getInfo();
-
-
-//class Test
-//{
-//    private static $name;
-//
-//    public static function setName($name1) {
-//        self::$name = $name1;
-//    }
-//
-//    public static function getName(){
-//        return self::$name;
-//    }
-//}
-
-//Test::setName('Vovka');
-//echo Test::getName();
+$a = new Keyboard(new key("a"));
+var_dump($a);
