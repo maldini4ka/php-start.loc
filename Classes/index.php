@@ -23,5 +23,7 @@ class key {
 
 }
 
-$a = new Keyboard(new key("a"));
+$a = new Keyboard(new key('a'));
 var_dump($a);
+echo '<br>';
+$b = $a->key;
